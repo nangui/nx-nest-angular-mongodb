@@ -2,7 +2,16 @@
   "name": "@production-angular/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "run:api": "yarn nx run api:serve",
+    "run:frontend": "yarn nx run frontend:serve",
+    "build:api": "yarn nx build api",
+    "build:frontend": "yarn nx build frontend",
+    "run:all": "yarn nx run-many --target=serve --all=true --projects=api,frontend",
+    "build:all": "yarn nx run-many --target=build --all=true --projects=api,frontend",
+    "lint:api": "yarn nx lint api",
+    "lint:frontend": "yarn nx lint frontend"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.2.0",
