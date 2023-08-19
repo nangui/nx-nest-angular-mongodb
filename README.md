@@ -20,22 +20,30 @@ To execute tasks with Nx use the following syntax:
 yarn nx <target> <project> <...options>
 ```
 
-## To start api and frontend
+## Start Api and Angular app
+
+To start api and angular app
 
 ```
 yarn run:all
 ```
 
-## To start only api
+## Start only api
+
+To start only api
 
 ```
 yarn run:api
 ```
 
-## To start only frontend
+## Start only frontend
+
+To start only angular app
 
 ```
 yarn run:frontend
 ```
 
 For other script, you can check on package.json file
+
+N-B: To start the project, you must first have a mongo DB instance and configure the instance on the backend. The project is located in the apps/api folder
