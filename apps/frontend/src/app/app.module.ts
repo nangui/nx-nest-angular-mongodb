@@ -13,6 +13,9 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 import { EmployeesDetailsComponent } from './employees/employees-details/employees-details.component';
 import { HomeComponent } from './home/home.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,18 @@ import { HomeComponent } from './home/home.component';
     CoreDataModule,
     CoreStateModule,
     RoutingModule,
+    StoreModule.forRoot(
+      {},
+      {
+        metaReducers: [],
+        runtimeChecks: {
+          strictActionImmutability: true,
+          strictStateImmutability: true,
+        },
+      }
+    ),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
