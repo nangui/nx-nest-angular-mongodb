@@ -1,3 +1,8 @@
-<h1>{{ title }}</h1>
-<div>{{ hello.message }}</div>
-<router-outlet></router-outlet>
+<!-- navbar component -->
+<production-angular-navbar />
+<!-- drawer component -->
+<production-angular-drawer />
+<!-- Container -->
+<main class="p-4 md:ml-64 h-auto pt-20">
+  <router-outlet />
+</main>
