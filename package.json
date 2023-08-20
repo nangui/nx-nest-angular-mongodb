@@ -5,6 +5,7 @@
   "scripts": {
     "run:api": "yarn nx run api:serve",
     "run:frontend": "yarn nx run frontend:serve",
+    "serve:json": "json-server --watch ./server/db.json --port 3333",
     "build:api": "yarn nx build api",
     "build:frontend": "yarn nx build frontend",
     "run:all": "yarn nx run-many --target=serve --all=true --projects=api,frontend",
@@ -32,6 +33,7 @@
     "@ngrx/store": "~16.0.0",
     "axios": "^1.0.0",
     "flowbite": "^1.8.1",
+    "json-server": "^0.17.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
