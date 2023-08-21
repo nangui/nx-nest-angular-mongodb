@@ -11,10 +11,9 @@ import { CompaniesComponent } from './companies/companies.component';
 import { EmployeesDetailsComponent } from './employees/employees-details/employees-details.component';
 import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 import { EmployeesComponent } from './employees/employees.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './home/home.component';
 import { RoutingModule } from './routing.module';
-import { NavbarComponent } from './core/components/navbar/navbar.component';
-import { DrawerComponent } from './core/components/drawer/drawer.component';
+import { UiModule } from '@production-angular/ui';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,6 @@ import { DrawerComponent } from './core/components/drawer/drawer.component';
     EmployeesDetailsComponent,
     EmployeesListComponent,
     HomeComponent,
-    NavbarComponent,
-    DrawerComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +32,7 @@ import { DrawerComponent } from './core/components/drawer/drawer.component';
     CoreStateModule,
     RouterModule.forRoot(appRoutes),
     RoutingModule,
+    UiModule
   ],
   providers: [],
   bootstrap: [AppComponent],

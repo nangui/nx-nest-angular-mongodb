@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Company } from '@production-angular/api-interfaces';
 
-const API_ENDPOINT = 'http://localhost:3333/api';
+const API_ENDPOINT = 'http://localhost:3333';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,7 @@ export class CompaniesService {
 
   async create(company: Company): Promise<Company> {
     return fetch(this.getUrl(), {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      ...this.requestInit('POST'),
       body: JSON.stringify(company)
     }).then(res => res.json());
   }
@@ -30,8 +29,7 @@ export class CompaniesService {
       return this.create(company);
     }
     return fetch(this.getUrlWithId(company.id), {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      ...this.requestInit('PUT'),
       body: JSON.stringify(company)
     }).then(res => res.json());
   }
@@ -50,5 +48,12 @@ export class CompaniesService {
 
   private getUrlWithId(id: string): string {
     return `${this.getUrl()}/${id}`;
+  }
+
+  private requestInit (method: string): RequestInit {
+    return {
+      method,
+      headers: { 'Content-Type': 'application/json' }
+    }
   }
 }
