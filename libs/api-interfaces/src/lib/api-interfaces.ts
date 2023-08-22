@@ -12,12 +12,16 @@ export interface Company extends BaseEntity {
   updatedAt: string;
 }
 
-export interface CompanyFormValues {
+export interface CreateCompanyDto {
   name: string;
   description: string;
   address: string;
   email: string;
   phone: string;
+}
+
+export interface UpdateCompanyDto extends CreateCompanyDto {
+  id: string;
 }
 
 export interface Employee extends BaseEntity {
@@ -30,7 +34,7 @@ export interface Employee extends BaseEntity {
   updatedAt: string;
 }
 
-export interface EmployeeFormValues {
+export interface CreateEmployeeDto {
   firstName: string;
   lastName: string;
   email: string;

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Company } from '@production-angular/api-interfaces';
 
-const API_ENDPOINT = 'http://localhost:3333';
+const API_ENDPOINT = 'http://localhost:3000/api';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +53,7 @@ export class CompaniesService {
   private requestInit (method: string): RequestInit {
     return {
       method,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
     }
   }
 }
